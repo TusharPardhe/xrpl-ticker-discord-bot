@@ -1,4 +1,4 @@
-const { prefix } = require("../config.json");
+require("dotenv").config();
 
 const onDiscordMessage = (client, aliases, callback) => {
     aliases = typeof aliases === "string" ? [aliases] : aliases;
@@ -9,7 +9,7 @@ const onDiscordMessage = (client, aliases, callback) => {
         let isValidCommand = false;
 
         aliases.forEach((alias) => {
-            if (userCommand === `${prefix}${alias}`) {
+            if (userCommand === `${process.env.PREFIX}${alias}`) {
                 isValidCommand = true;
             }
         });

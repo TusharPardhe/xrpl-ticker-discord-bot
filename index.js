@@ -1,8 +1,8 @@
 const { Client, Intents, Permissions } = require("discord.js");
 
-const config = require("./config.json");
 const onDiscordMessage = require("./functions/messages");
 const getTokenPrice = require("./functions/getTokenPrice");
+require("dotenv").config();
 
 const discordClient = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
 
@@ -31,4 +31,4 @@ discordClient.on("ready", () => {
     });
 });
 
-discordClient.login(config.token);
+discordClient.login(process.env.DISCORD_TOKEN);
