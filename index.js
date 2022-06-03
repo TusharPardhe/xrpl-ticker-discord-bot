@@ -17,7 +17,7 @@ discordClient.on("ready", () => {
     // });
 
     onDiscordMessage(discordClient, ["editionsTicker"], async (message) => {
-        if (message.member.roles.find((r) => ["940578399741702154", "933501056934084665", "933501056946671627"].includes(r.id))) {
+        if (message.member.roles.cache.some((r) => ["940578399741702154", "933501056934084665", "933501056946671627"].includes(r.id))) {
             const bot = message.guild.members.cache.find((member) => member.id === discordClient.user.id);
             const tokenPrice = await getTokenPrice();
             discordClient.user.setStatus("online");
