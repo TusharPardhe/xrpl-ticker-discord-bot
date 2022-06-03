@@ -21,7 +21,7 @@ discordClient.on("ready", () => {
             const bot = message.guild.members.cache.find((member) => member.id === discordClient.user.id);
             const tokenPrice = await getTokenPrice();
             discordClient.user.setStatus("online");
-            discordClient.user.setActivity("editions booklet", { type: "WATCHING" });
+            discordClient.user.setActivity("éditions booklet", { type: "WATCHING" });
 
             setInterval(() => {
                 const title = `${tokenPrice} XRP`;
