@@ -22,7 +22,7 @@ discordClient.on("ready", () => {
             discordClient.user.setStatus("online");
             discordClient.user.setActivity("éditions booklet", { type: "WATCHING" });
             
-            setInterval(() => {
+            setInterval(async () => {
                 const tokenPrice = await getTokenPrice();
                 const title = `${tokenPrice} XRP`;
                 bot.setNickname(title);
