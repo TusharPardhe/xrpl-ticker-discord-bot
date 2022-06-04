@@ -26,7 +26,8 @@ discordClient.on("ready", () => {
             setInterval(() => {
                 const title = `${tokenPrice} XRP`;
                 bot.setNickname(title);
-            }, 10000);
+                console.log(title);
+            }, 60000);
         }
     });
 });
